@@ -8,7 +8,7 @@ export function renderDogCard(dog) {
 
     p.textContent = dog.name;
     img.src = `./assets/${dog.dog_breeds.name}.jpeg`;
-    a.href = ''; // link to the dog's detail page here
+    a.href = '.detail?id=dog.name'; // link to the dog's detail page here
 
     div.append(p, img);
 
@@ -18,6 +18,7 @@ export function renderDogCard(dog) {
 }
 
 export function renderDogDetail(dog) {
+    // examine the css classes already written and finish writing a detail page using the above elements
     const div = document.createElement('div');
     const img = document.createElement('img');
     const descriptionEl = document.createElement('p');
@@ -26,7 +27,21 @@ export function renderDogDetail(dog) {
     const breedEl = document.createElement('p');
     const ageAndBreedEl = document.createElement('div');
 
-    // examine the css classes already written and finish writing a detail page using the above elements
+    img.src = `./assets/${dog.dog_breeds.name}.jpeg`;
+    descriptionEl.textContent = dog.description;
+    nameEl.textContent = dog.name;
+    ageEl.textContent = dog.age;
+    breedEl.textContent = dog.dog_breeds.name;
+
+    ageAndBreedEl.append(ageEl, breedEl);
+
+    div.classList.add('dog-detail');
+    img.classList.add('img');
+    descriptionEl.classList.add('description');
+    nameEl.classList.add('name');
+    ageAndBreedEl.classList.add('age-and-breed');
+
+    div.append(img, descriptionEl, nameEl, ageAndBreedEl);
 
     return div;
 }
