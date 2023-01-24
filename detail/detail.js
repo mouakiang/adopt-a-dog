@@ -9,9 +9,14 @@ window.addEventListener('load', async () => {
     const data = new URLSearchParams(window.location.search);
 
     const id = data.get('id');
-    console.log(id);
 
-    // const response = await getDog(id);
+    const response = await getDog(id);
+
+    dogData = response;
+
+    const dogRender = renderDogDetail(dogData);
+
+    dogDetailContainer.append(dogRender);
 });
 // get the id from URL
 // use the id to fetch the dog

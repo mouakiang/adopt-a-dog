@@ -27,7 +27,7 @@ export function renderDogDetail(dog) {
     const breedEl = document.createElement('p');
     const ageAndBreedEl = document.createElement('div');
 
-    img.src = `./assets/${dog.dog_breeds.name}.jpeg`;
+    img.src = `../assets/${dog.dog_breeds.name}.jpeg`;
     descriptionEl.textContent = dog.description;
     nameEl.textContent = dog.name;
     ageEl.textContent = dog.age;
